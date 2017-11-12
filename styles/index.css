@@ -5,10 +5,17 @@ html {
 }
 
 .calendar-container {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
-  height: 400px;
+  height: 450px;
+  position: relative;
   overflow-y: scroll;
+}
+
+.cells {
+  position: absolute;
+  right: 0;
+  margin-right: 30px;
 }
 
 .timeslot-cell {
@@ -25,14 +32,14 @@ html {
 
 .date--header {
   font-size: 14px;
-  width: 110px;
+  width: 90px;
 }
 
 .calendar-cell {
   border: 1px solid #E0E0E0;
   border-bottom: 0px;
   height: 15px;
-  width: 110px;
+  width: 90px;
   cursor: pointer;
 }
 
