@@ -7,11 +7,16 @@
       content="Google Calendar Re-design for web platforms">
 
     <link rel="stylesheet" type="text/css" href="styles/index.css">
+    <link rel="stylesheet" type="text/css" href="styles/calendar.css">
   </head>
 
   <body>
+
     <div class="application-container">
       <h1 class="container__title">My Calendar - Weekly View<h1>
+
+        <div id="calendar"></div>
+
 
       <div>
         <span>Today's date is: </span>
@@ -19,6 +24,9 @@
       </div>
 
       <div class="calendar-container">
+
+        <div class='calendar_modern' id='calendar'>
+        </div>
 
         <div class="cells">
           <div class="calendar-column calendar--timeslots">
