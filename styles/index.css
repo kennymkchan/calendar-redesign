@@ -1,0 +1,57 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+.calendar-container {
+  width: 80%;
+  margin: 0 auto;
+  height: 400px;
+  overflow-y: scroll;
+}
+
+.timeslot-cell {
+  height: 30px;
+  width: 90px;
+  font-size: 15px;
+  border: 1px solid transparent;
+  text-align: right;
+}
+
+.timeslot--header {
+  color: white;
+}
+
+.date--header {
+  font-size: 14px;
+  width: 110px;
+}
+
+.calendar-cell {
+  border: 1px solid #E0E0E0;
+  border-bottom: 0px;
+  height: 15px;
+  width: 110px;
+  cursor: pointer;
+}
+
+/* Adds a bottom border to the last element */
+.calendar-cell--last {
+  border: 1px solid #E0E0E0;
+}
+
+.calendar-cell:hover {
+  background-color: #BDBDBD;
+}
+
+.calendar-column {
+  display: inline-flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.calendar-column--timeslots {
+  width: 50px;
+}

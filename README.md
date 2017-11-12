@@ -14,3 +14,9 @@ of the website.
 Gulp serve will serve the application on your localhost at port 9000.
 You can change it by going to the `gulpfile.js` and changing the settings
 in the `connect` task.
+
+** Gulp serve has hot reload on HTML, and CSS; so changes should be there immediately without refreshing**
+--> You will need to reload for Javascript changes because it's very inefficient watching those.
+
+For date related things, I will be using Moment.js to handle all that information
+--> https://momentjs.com
