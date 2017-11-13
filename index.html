@@ -13,12 +13,31 @@
 
   <body>
 
+    <div class="add-widget-container">
+      <div class="add-widget-wrapper">
+
+        <div class="add-fieldset">
+        <span class="field-title">Title:</span><input autofocus type="text" placeholder="Event Title">
+        </div>
+
+        <div class="duo-button-wrapper">
+          <div class="cta-button add-calendar--cancel-btn">
+            <span>Cancel</span>
+          </div>
+
+          <div class="cta-button add-calendar--btn">
+            <span>Add New Event</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="side-panel">
       <div id="calendar">
       </div>
 
       <div class="side-panel--content">
-        <a href="/addEdit.html">
+        <a href="/calendar-redesign/addEdit.html">
           <div class="add-event--btn">
             <span>Add New Event</span>
           </div>
@@ -31,30 +50,30 @@
         <div class="calendar-dropdown">
           <span> Calendar: </span>
           <select class="dropdown-select" name="cars">
-            <option value="volvo">James</option>
+            <option value="volvo">Professor Jerry</option>
             <option value="saab">#TeamTooLit</option>
             <option value="fiat">Professor Hancock</option>
             <option value="audi">Girlfriend</option>
           </select>
         </div>
 
-        <div class="action">
+        <div class="action import-calendar">
           <span> Import calendar </span>
         </div>
 
-        <div class="action">
+        <div class="action add-calendar">
           <span> Add to calendar </span>
         </div>
 
-        <div class="action">
+        <div class="action remove-calendar">
           <span> Remove from calendar </span>
         </div>
 
-        <div class="action">
-          <span> Enter edit mode </span>
+        <div class="action edit-calendar">
+          <a href="/calendar-redesign/addEdit.html"><span> Enter edit mode </span></a>
         </div>
 
-        <div class="action">
+        <div class="action refresh">
           <span> Refresh </span>
         </div>
       </div>

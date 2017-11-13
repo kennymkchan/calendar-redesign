@@ -43,13 +43,14 @@ var timeslotHash = {
   23: "5am",
 }
 
+var filter = false;
+var addCalendarBool = true;
+
 var day = moment.date();
 var month = moment.month() + 1; // + 1 because the months start at 0
 var year = moment.year();
 
 var currDate = day + " " + monthHash[month] + ", " + year;
-
-console.log("Today date: " + currDate);
 
 $(".current-date").html(currDate);
 
@@ -140,6 +141,83 @@ $(calendarEvent).attr("class", "calendar-event timeblock--120 timeblock-5");
 $(calendarEvent).append("<p>Interview with Google</p>");
 $(calendarEvent).append("<span>10:40 - 1:40 pm</span>");
 $(".calendar--day-1").append(calendarEvent);
+
+// Other demo events
+var calendarEvent = document.createElement("div");
+$(calendarEvent).attr("class", "calendar-event timeblock--60 timeblock-prof-1");
+$(calendarEvent).append("<p>Unavailble</p>");
+$(calendarEvent).append("<span>10:30 - 12:00 pm</span>");
+$(".calendar--day-3").append(calendarEvent);
+$(calendarEvent).hide();
+
+var calendarEvent = document.createElement("div");
+$(calendarEvent).attr("class", "calendar-event timeblock--60 timeblock-prof-2");
+$(calendarEvent).append("<p>Breakfast Party with department</p>");
+$(calendarEvent).append("<span>7:20 - 8:50 am</span>");
+$(".calendar--day-1").append(calendarEvent);
+$(calendarEvent).hide();
+
+var calendarEvent = document.createElement("div");
+$(calendarEvent).attr("class", "calendar-event timeblock--60 timeblock-prof-3");
+$(calendarEvent).append("<p>Pick up textbooks</p>");
+$(calendarEvent).append("<span>9:40 - 11:10 am</span>");
+$(".calendar--day-6").append(calendarEvent);
+$(calendarEvent).hide();
+
+// Adding onclick listener to events
+$(".view-filter").click(function() {
+  filterResults();
+});
+
+$('.add-calendar').click(function() {
+  addProfCalendar();
+});
+
+$('.remove-calendar').click(function() {
+  removeProfCalendar();
+});
+
+$('.calendar-cell').click(function() {
+  var url = '/calendar-redesign/addEdit.html?' + '&date=selected&action=addEvent';
+  window.location.href = url;
+});
+
+$('.calendar-event').click(function() {
+  var url = '/calendar-redesign/addEdit.html?' + '&date=known&action=editEvent&title=breakfast';
+  window.location.href = url;
+});
+
+function filterResults() {
+  if (!filter) {
+    $('.timeblock-2').hide();
+    $('.timeblock-3').hide();
+    $('.timeblock-4').hide();
+  } else {
+    $('.timeblock-2').show();
+    $('.timeblock-3').show();
+    $('.timeblock-4').show();
+  }
+  filter = !filter;
+}
+
+function addProfCalendar() {
+  if (addCalendarBool) {
+    $('.timeblock-prof-1').show();
+    $('.timeblock-prof-2').show();
+    $('.timeblock-prof-3').show();
+  }
+  addCalendarBool = false;
+}
+
+function removeProfCalendar() {
+  if (!addCalendarBool) {
+    $('.timeblock-prof-1').hide();
+    $('.timeblock-prof-2').hide();
+    $('.timeblock-prof-3').hide();
+  }
+  addCalendarBool = true;
+}
+
 
 // Calendar Widget on the side
 !function() {
