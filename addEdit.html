@@ -1,0 +1,115 @@
+<html lang="en">
+
+  <head>
+    <title>Google Calendar Redesign</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+      content="Google Calendar Re-design for web platforms">
+
+    <link rel="stylesheet" type="text/css" href="styles/index.css">
+  </head>
+
+  <body>
+    <div class="application-container">
+      <h1 class="container__title">Add / Edit Event<h1>
+    </div>
+    <div class="left">
+      <form>
+        <span><b>Type:</b> </span> <br />
+        <input type="radio" name="gender" checked> Personal<br>
+        <input type="radio" name="gender"> Group<br> <br />
+        <span>Title: <input type="text"></span> <br /> <br />
+        <span>Date: <input type="text"></span> <br /> <br />
+        <span>Length: <input type="text"></span> <br /> <br />
+        <span>Start Time: <input type="text"></span> <br /> <br />
+        <span>Category: <input type="text"></span> <br /> <br />
+        <span>Location: <input type="text"></span> <br /> <br />
+      </form>
+
+      <div class="calendar-container">
+        <div class="cells">
+          <div class="calendar-column calendar--timeslots-thin">
+            <div class="date--header">
+              <span class="timeslot--header">timeslot</span>
+              <span class="week-date-1"></span>
+            </div>
+          </div>
+
+          <div class="calendar-column calendar--wide-1">
+            <div class="date--header">
+              <b><span class="current-date"></span></b>
+              <span class="week-date-1"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="middle">
+      <div> <b>Remind me in advance:</b><br />
+        <select>
+          <option selected="Select">Select</option>
+          <option value="">30 minutes</option>
+          <option value="">1 hour</option>
+          <option value="">2 hours</option>
+        </select>
+      </div> <br /> <br />
+
+      <div>
+        <b>Notes:</b> <br />
+        <textarea wrap="physical" rows="10" cols="50" placeholder="Enter any necessary notes here"></textarea>
+      </div> <br /> <br />
+
+      <div> <b>Repitition</b><br /><br />
+        Repeats:<br />
+        <select>
+          <option selected="Select">Never</option>
+          <option value="">daily</option>
+          <option value="">weekly</option>
+          <option value="">monthly</option>
+        </select><br /><br />
+        On the selected days: <br />
+        <span>
+          <input type="checkbox">Mon
+          <input type="checkbox">Tues
+          <input type="checkbox">Wed
+          <input type="checkbox">Thur
+          <input type="checkbox">Fri
+          <input type="checkbox">Sat
+          <input type="checkbox">Sun
+        </span>
+      </div> <br /> <br />
+
+    </div>
+
+    <div class="right">
+      <div>
+        <b>Invite Members</b> <br />
+        Select a user:
+        <select id="users">
+          <option value="">Select</option>
+          <option value="User 1">User 1</option>
+          <option value="User 2">User 2</option>
+          <option value="User 3">User 3</option>
+          <option value="User 4">User 4</option>
+          <option value="User 5">User 5</option>
+          <option value="User 6">User 6</option>
+        </select>
+      </div> <br /><br />
+
+      <button type="button">Save</button><br />
+      <button type="button">Cancel</button>
+
+    </div>
+  </body>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.2/moment.min.js"></script>
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+  <script src="scripts/index.js"></script>
+
+</html>

@@ -66,6 +66,15 @@ for (var i = 0; i < 24; i++) {
   $(timeContainer).append(timeCell);
 }
 
+var timeContainer = $(".calendar--timeslots-thin");
+for (var i = 0; i < 24; i++) {
+
+  var timeCell = document.createElement("div");
+  $(timeCell).attr("class", "timeslot-cell-thin");
+  $(timeCell).append("<span>" + timeslotHash[i] + "</span>");
+  $(timeContainer).append(timeCell);
+}
+
 
 // Loop through the different days in the week and append the timeslots
 for (var day = 1; day < 8; day++) {
@@ -85,6 +94,24 @@ for (var day = 1; day < 8; day++) {
     $(calendarContainer).append(calendarCell);
   }
 }
+
+for (var day = 1; day < 8; day++) {
+
+  calendarContainer = $(".calendar--wide-" + day);
+
+  // Creating the calendar cells. Each calendar cell should represent 30min,
+  // so one day will have a total of 2 * 24;
+  for (var i = 0; i < 48; i++) {
+    var calendarCell = document.createElement("div");
+    if (i < 47) {
+      $(calendarCell).attr("class", "calendar-cell-wide");
+    } else {
+      $(calendarCell).attr("class", "calendar-cell--last calendar-cell");
+    }
+    $(calendarContainer).append(calendarCell);
+  }
+}
+
 
 
 console.log("Day of week: " + moment.isoWeekday()); // Sunday = 7; Monday = 1
