@@ -39,6 +39,7 @@ html {
   z-index: -1;
 }
 
+
 .timeslot--header {
   color: white;
 }
@@ -53,6 +54,7 @@ html {
 .current-day--header {
   color: #607CCB;
   font-size: 14px;
+  width: 120px;
 }
 
 .calendar-cell {
@@ -133,7 +135,48 @@ html {
   font-weight: bold;
 }
 
+/* Add/Edit Page Structure */
+.left {
+  width:33%;
+  height: 100%;
+  float:left;
+}
 
+.middle {
+  width:33%;
+  height:100%;
+  float:left
+}
+
+.right {
+  width:33%;
+  height:100%;
+  float:left
+}
+
+.timeslot-cell-thin {
+  height: 30px;
+  width: 90px;
+  font-size: 15px;
+  border: 1px solid transparent;
+  text-align: right;
+}
+
+.calendar-cell-wide {
+  border: 1px solid #E0E0E0;
+  border-bottom: 0px;
+  height: 15px;
+  width: 120px;
+  cursor: pointer;
+}
+
+.calendar-container {
+  width: 90%;
+  margin: 0 auto;
+  height: 300px;
+  position: relative;
+  overflow-y: scroll;
+ }
 
 /* Calendar Event Styles */
 .calendar-event {
@@ -190,6 +233,7 @@ html {
   margin-top: -1550px;
 }
 
-.block-text {
-  z-index: 100;
+.timeblock-6 {
+  background-color: #7CB9CA;
+  margin-top: -1330px;
 }
