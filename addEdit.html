@@ -11,27 +11,29 @@
   </head>
 
   <body>
-    <div class="application-container">
-      <h1 class="container__title">Add / Edit Event<h1>
-    </div>
-    <div class="left">
-      <form>
-        <span><b>Type:</b> </span> <br />
-        <input type="radio" name="gender" checked> Personal<br>
-        <input type="radio" name="gender"> Group<br> <br />
-        <span>Title: <input type="text"></span> <br /> <br />
-        <span>Date: <input type="text"></span> <br /> <br />
-        <span>Length: <input type="text"></span> <br /> <br />
-        <span>Start Time: <input type="text"></span> <br /> <br />
-        <span>Category: <input type="text"></span> <br /> <br />
-        <span>Location: <input type="text"></span> <br /> <br />
+    <!-- <div class="application-container">
+      <h1 class="container__title content">Add / Edit Event<h1>
+    </div> -->
+    <div class="left form-style-6">
+      <h2>Edit Event</h2>
+      <form class="pure-form pure-form-aligned">
+
+        <h4>Type:</h4>
+        <input class="content" type="radio" name="gender" checked> Personal<br>
+        <input class="content" type="radio" name="gender"> Group<br> <br />
+        <input type="text" placeholder="Title"></span> <br /> <br />
+        <input type="text" placeholder="Date"></span> <br /> <br />
+        <input type="text" placeholder="Length"></span> <br /> <br />
+        <input type="text" placeholder="Start Time"></span> <br /> <br />
+        <input type="text" placeholder="Length"></span> <br /> <br />
+        <input type="text" placeholder="Length"></span> <br /> <br />
       </form>
 
-      <div class="calendar-container">
+      <div class="calendar-container container">
         <div class="cells">
           <div class="calendar-column calendar--timeslots-thin">
             <div class="date--header">
-              <span class="timeslot--header">timeslot</span>
+              <span class="timeslot--header"></span>
               <span class="week-date-1"></span>
             </div>
           </div>
@@ -48,7 +50,7 @@
     </div>
 
     <div class="middle">
-      <div> <b>Remind me in advance:</b><br />
+      <div class="content" style="margin-top:40px"> <b>Remind me in advance:</b><br />
         <select>
           <option selected="Select">Select</option>
           <option value="">30 minutes</option>
@@ -57,12 +59,13 @@
         </select>
       </div> <br /> <br />
 
-      <div>
+      <div class="content">
         <b>Notes:</b> <br />
         <textarea wrap="physical" rows="10" cols="50" placeholder="Enter any necessary notes here"></textarea>
       </div> <br /> <br />
 
-      <div> <b>Repitition</b><br /><br />
+      <div class="content">
+        <b>Repitition</b><br /><br />
         Repeats:<br />
         <select>
           <option selected="Select">Never</option>
@@ -85,23 +88,30 @@
     </div>
 
     <div class="right">
-      <div>
-        <b>Invite Members</b> <br />
-        Select a user:
-        <select id="users">
-          <option value="">Select</option>
-          <option value="User 1">User 1</option>
-          <option value="User 2">User 2</option>
-          <option value="User 3">User 3</option>
-          <option value="User 4">User 4</option>
-          <option value="User 5">User 5</option>
-          <option value="User 6">User 6</option>
-        </select>
-      </div> <br /><br />
-
-      <button type="button">Save</button><br />
-      <button type="button">Cancel</button>
-
+      <span class="content">
+        <div class="content" style="margin-top:40px">
+          <b>Invite Members</b> <br />
+          Select a user:
+          <select id="users">
+            <option value="">Select</option>
+            <option value="User 1">User 1</option>
+            <option value="User 2">User 2</option>
+            <option value="User 3">User 3</option>
+            <option value="User 4">User 4</option>
+            <option value="User 5">User 5</option>
+            <option value="User 6">User 6</option>
+          </select>
+        </div> <br /><br />
+        <a href="/index.html">
+          <div class="add-event--btn">
+            <span>Save</span>
+          </div> </a><br /><br />
+        <a href="/index.html">
+          <div class="add-event--btn-red">
+            <span>Cancel</span>
+          </div>
+        </a>
+      </span>
     </div>
   </body>
 
@@ -111,6 +121,6 @@
     src="https://code.jquery.com/jquery-3.2.1.min.js"
     integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
     crossorigin="anonymous"></script>
-  <script src="scripts/index.js"></script>
+  <script src="scripts/edit.js"></script>
 
 </html>
