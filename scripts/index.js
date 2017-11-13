@@ -119,26 +119,26 @@ $(".calendar--day-4").append(calendarEvent);
 
 var calendarEvent = document.createElement("div");
 $(calendarEvent).attr("class", "calendar-event timeblock--120 timeblock-2");
-$(calendarEvent).append("<p>Soccer Practice</p>");
-$(calendarEvent).append("<span>6:15 - 7:45 am</span>")
+$(calendarEvent).append("<p>Catching up with bae</p>");
+$(calendarEvent).append("<span>8:45 - 11:45 am</span>")
 $(".calendar--day-5").append(calendarEvent);
 
 var calendarEvent = document.createElement("div");
 $(calendarEvent).attr("class", "calendar-event timeblock--30 timeblock-3");
-$(calendarEvent).append("<p>Soccer Practice</p>");
-$(calendarEvent).append("<span>6:15 - 7:45 am</span>");
+$(calendarEvent).append("<p>Breakfast</p>");
+$(calendarEvent).append("<span>8:15 - 9:10 am</span>");
 $(".calendar--day-2").append(calendarEvent);
 
 var calendarEvent = document.createElement("div");
 $(calendarEvent).attr("class", "calendar-event timeblock--60 timeblock-4");
-$(calendarEvent).append("<p>Soccer Practice</p>");
-$(calendarEvent).append("<span>6:15 - 7:45 am</span>");
+$(calendarEvent).append("<p>Lunch with Professor</p>");
+$(calendarEvent).append("<span>11:50 - 12:50 pm</span>");
 $(".calendar--day-7").append(calendarEvent);
 
 var calendarEvent = document.createElement("div");
 $(calendarEvent).attr("class", "calendar-event timeblock--120 timeblock-5");
-$(calendarEvent).append("<p>Soccer Practice</p>");
-$(calendarEvent).append("<span>6:15 - 7:45 am</span>");
+$(calendarEvent).append("<p>Interview with Google</p>");
+$(calendarEvent).append("<span>10:40 - 1:40 pm</span>");
 $(".calendar--day-1").append(calendarEvent);
 
 // Calendar Widget on the side
