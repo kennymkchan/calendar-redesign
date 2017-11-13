@@ -17,30 +17,30 @@ var monthHash = {
 };
 
 var timeslotHash = {
-  0: "12am",
-  1: "1am",
-  2: "2am",
-  3: "3am",
-  4: "4am",
-  5: "5am",
-  6: "6am",
-  7: "7am",
-  8: "8am",
-  9: "9am",
-  10: "10am",
-  11: "11am",
-  12: "12pm",
-  13: "1pm",
-  14: "2pm",
-  15: "3pm",
-  16: "4pm",
-  17: "5pm",
-  18: "6pm",
-  19: "7pm",
-  20: "8pm",
-  21: "9pm",
-  22: "10pm",
-  23: "11pm",
+  0: "6am",
+  1: "7am",
+  2: "8am",
+  3: "9am",
+  4: "10am",
+  5: "11am",
+  6: "12pm",
+  7: "1pm",
+  8: "2pm",
+  9: "3pm",
+  10: "4pm",
+  11: "5pm",
+  12: "6pm",
+  13: "7pm",
+  14: "8pm",
+  15: "9pm",
+  16: "10pm",
+  17: "11pm",
+  18: "12am",
+  19: "1am",
+  20: "2am",
+  21: "3am",
+  22: "4am",
+  23: "5am",
 }
 
 var day = moment.date();
@@ -79,17 +79,43 @@ for (var day = 1; day < 8; day++) {
     if (i < 47) {
       $(calendarCell).attr("class", "calendar-cell");
     } else {
-      console.log("Hello");
       $(calendarCell).attr("class", "calendar-cell--last calendar-cell");
     }
     $(calendarContainer).append(calendarCell);
   }
 }
 
+var calendarEvent = document.createElement("div");
+$(calendarEvent).attr("class", "calendar-event timeblock--60 timeblock-1");
+$(".calendar--day-4").append(calendarEvent);
+
+var calendarEvent = document.createElement("div");
+$(calendarEvent).attr("class", "calendar-event timeblock--120 timeblock-2");
+$(".calendar--day-5").append(calendarEvent);
+
+var calendarEvent = document.createElement("div");
+$(calendarEvent).attr("class", "calendar-event timeblock--30 timeblock-3");
+$(".calendar--day-2").append(calendarEvent);
+
+var calendarEvent = document.createElement("div");
+$(calendarEvent).attr("class", "calendar-event timeblock--60 timeblock-4");
+$(".calendar--day-7").append(calendarEvent);
+
+var calendarEvent = document.createElement("div");
+$(calendarEvent).attr("class", "calendar-event timeblock--120 timeblock-5");
+$(".calendar--day-1").append(calendarEvent);
+
+var calendarEvent = document.createElement("div");
+$(calendarEvent).attr("class", "calendar-event timeblock--60 timeblock-6");
+$(".calendar--day-5").append(calendarEvent);
+
 
 console.log("Day of week: " + moment.isoWeekday()); // Sunday = 7; Monday = 1
 
 
+
+
+// Calendar Widget on the side
 !function() {
 
   var today = moment;
@@ -337,7 +363,6 @@ console.log("Day of week: " + moment.isoWeekday()); // Sunday = 7; Monday = 1
 
     if(!events.length) {
       var div = createElement('div', 'event empty');
-      var span = createElement('span', '', 'No Events');
 
       div.appendChild(span);
       wrapper.appendChild(div);
@@ -384,6 +409,13 @@ console.log("Day of week: " + moment.isoWeekday()); // Sunday = 7; Monday = 1
   var data = [
     { eventName: 'App Demo', color: 'orange' },
     { eventName: 'Lunch', color: 'orange' },
+    { eventName: 'Bowling', color: 'orange' },
+    { eventName: 'Soccer', color: 'orange' },
+    { eventName: 'Dinner', color: 'orange' },
+    { eventName: 'Project', color: 'orange' },
+    { eventName: 'Homework - Calc', color: 'orange' },
+    { eventName: 'Breakfast', color: 'orange' },
+    { eventName: 'The game', color: 'orange' },
   ];
 
   function addDate(ev) {
