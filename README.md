@@ -20,3 +20,6 @@ in the `connect` task.
 
 For date related things, I will be using Moment.js to handle all that information
 --> https://momentjs.com
+
+## Screenshots
+![google-calendar-redesign](https://user-images.githubusercontent.com/22083509/32713867-213d8aa6-c819-11e7-9bde-d1ebdcf72e46.JPG)
