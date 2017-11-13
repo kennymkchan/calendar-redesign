@@ -89,6 +89,10 @@ html {
   left: 55px;
 }
 
+.side-panel--content a {
+  text-decoration: none;
+}
+
 .add-event--btn {
   border: 1px solid #607CCB;
   width: 200px;
