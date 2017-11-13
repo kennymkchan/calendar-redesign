@@ -85,35 +85,36 @@ for (var day = 1; day < 8; day++) {
   }
 }
 
+
 var calendarEvent = document.createElement("div");
 $(calendarEvent).attr("class", "calendar-event timeblock--60 timeblock-1");
+$(calendarEvent).append("<p>Soccer Practice</p>");
+$(calendarEvent).append("<span>6:15 - 7:45 am</span>");
 $(".calendar--day-4").append(calendarEvent);
 
 var calendarEvent = document.createElement("div");
 $(calendarEvent).attr("class", "calendar-event timeblock--120 timeblock-2");
+$(calendarEvent).append("<p>Soccer Practice</p>");
+$(calendarEvent).append("<span>6:15 - 7:45 am</span>")
 $(".calendar--day-5").append(calendarEvent);
 
 var calendarEvent = document.createElement("div");
 $(calendarEvent).attr("class", "calendar-event timeblock--30 timeblock-3");
+$(calendarEvent).append("<p>Soccer Practice</p>");
+$(calendarEvent).append("<span>6:15 - 7:45 am</span>");
 $(".calendar--day-2").append(calendarEvent);
 
 var calendarEvent = document.createElement("div");
 $(calendarEvent).attr("class", "calendar-event timeblock--60 timeblock-4");
+$(calendarEvent).append("<p>Soccer Practice</p>");
+$(calendarEvent).append("<span>6:15 - 7:45 am</span>");
 $(".calendar--day-7").append(calendarEvent);
 
 var calendarEvent = document.createElement("div");
 $(calendarEvent).attr("class", "calendar-event timeblock--120 timeblock-5");
+$(calendarEvent).append("<p>Soccer Practice</p>");
+$(calendarEvent).append("<span>6:15 - 7:45 am</span>");
 $(".calendar--day-1").append(calendarEvent);
-
-var calendarEvent = document.createElement("div");
-$(calendarEvent).attr("class", "calendar-event timeblock--60 timeblock-6");
-$(".calendar--day-5").append(calendarEvent);
-
-
-console.log("Day of week: " + moment.isoWeekday()); // Sunday = 7; Monday = 1
-
-
-
 
 // Calendar Widget on the side
 !function() {
@@ -364,8 +365,6 @@ console.log("Day of week: " + moment.isoWeekday()); // Sunday = 7; Monday = 1
     if(!events.length) {
       var div = createElement('div', 'event empty');
 
-      div.appendChild(span);
-      wrapper.appendChild(div);
     }
 
     if(currentWrapper) {
