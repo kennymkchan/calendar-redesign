@@ -5,14 +5,11 @@ html {
   padding: 0;
 }
 
-.side-panel {
-}
-
 .application-container {
   margin-bottom: 40px;
 }
 
-.calendar-container {
+.calendar-container-main {
   width: 75%;
   right: 30px;
   top: 40px;
@@ -27,7 +24,6 @@ html {
   right: 0;
   margin-right: 30px;
   font-size: 0;
-
 }
 
 .timeslot-cell {
@@ -39,7 +35,6 @@ html {
   margin-right: 10px;
   z-index: -1;
 }
-
 
 .timeslot--header {
   color: white;
@@ -55,10 +50,6 @@ html {
 .current-day--header {
   color: #607CCB;
   font-size: 14px;
-<<<<<<< HEAD
-  width: 120px;
-=======
->>>>>>> e6991f525b599672de69e8d6fdf1855df76c431a
 }
 
 .calendar-cell {
@@ -92,56 +83,20 @@ html {
   width: 50px;
 }
 
-<<<<<<< HEAD
-/* Add/Edit Page Structure */
-.left {
-  width:33%;
-  height: 100%;
-  float:left;
-}
-
-.middle {
-  width:33%;
-  height:100%;
-  float:left
-}
-
-.right {
-  width:33%;
-  height:100%;
-  float:left
-}
-
-.timeslot-cell-thin {
-  height: 30px;
-  width: 90px;
-  font-size: 15px;
-  border: 1px solid transparent;
-  text-align: right;
-}
-
-.calendar-cell-wide {
-  border: 1px solid #E0E0E0;
-  border-bottom: 0px;
-  height: 15px;
-  width: 120px;
-  cursor: pointer;
-}
-
-.calendar-container {
-  width: 90%;
-  margin: 0 auto;
-  height: 300px;
-  position: relative;
-  overflow-y: scroll;
-=======
-.add-event--btn {
+.side-panel--content {
   position: absolute;
   top: 330px;
-  left: 70px;
+  left: 55px;
+}
 
+.side-panel--content a {
+  text-decoration: none;
+}
+
+.add-event--btn {
   border: 1px solid #607CCB;
   width: 200px;
+  margin-left: 10px;
   padding-top: 5px;
   padding-bottom: 5px;
   background-color: #607CCB;
@@ -150,13 +105,52 @@ html {
   color: white;
   font-size: 13px;
   line-height: 30px;
+  cursor: pointer;
+  z-index: 30;
 }
 
+.view-filter {
+  margin-top: 20px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.calendar-dropdown {
+  display: inline-block;
+  font-size: 14px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.dropdown-select {
+  width: 150px;
+  margin-left: 15px;
+}
+
+.action {
+  font-size: 13px;
+  margin-top: 13px;
+  cursor: pointer;
+  font-weight: bold;
+}
 
 
 /* Calendar Event Styles */
 .calendar-event {
+  font-size: 12px;
+  color: white;
+  position: relative;
   width: 110px;
+}
+
+.calendar-event p {
+  margin-left: 5px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.calendar-event span {
+  margin-left: 5px;
 }
 
 .timeblock--30 {
@@ -194,10 +188,4 @@ html {
 .timeblock-5 {
   background-color: #CC739E;
   margin-top: -1550px;
-}
-
-.timeblock-6 {
-  background-color: #7CB9CA;
-  margin-top: -1330px;
->>>>>>> e6991f525b599672de69e8d6fdf1855df76c431a
 }

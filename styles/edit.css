@@ -1,0 +1,42 @@
+/* Add/Edit Page Structure */
+.left {
+  width:33%;
+  height: 100%;
+  float:left;
+}
+
+.middle {
+  width:33%;
+  height:100%;
+  float:left
+}
+
+.right {
+  width:33%;
+  height:100%;
+  float:left
+}
+
+.timeslot-cell-thin {
+  height: 30px;
+  width: 90px;
+  font-size: 15px;
+  border: 1px solid transparent;
+  text-align: right;
+}
+
+.calendar-cell-wide {
+  border: 1px solid #E0E0E0;
+  border-bottom: 0px;
+  height: 15px;
+  width: 120px;
+  cursor: pointer;
+}
+
+.calendar-container {
+  width: 90%;
+  margin: 0 auto;
+  height: 300px;
+  position: relative;
+  overflow-y: scroll;
+}
