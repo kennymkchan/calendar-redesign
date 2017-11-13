@@ -9,10 +9,60 @@ html {
   margin-bottom: 40px;
 }
 
+.left-arrow {
+  position: absolute;
+  left: 400px;
+  top: 13px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.right-arrow {
+  margin-left: 10px;
+  position: absolute;
+  right: 100px;
+  top: 13px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.arrow-icon {
+  font-size: 17px;
+}
+
+.arrow-icon-right {
+  margin-left: 12px;
+}
+
+.arrow-icon-left {
+  margin-right: 12px;
+}
+
+.arrow-icon::before {
+  content: '';
+  z-index: -1;
+  background-color: rgba(200, 200, 200, .3);
+  color: rgba(200, 200, 200, .9);
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.arrow-icon-right::before {
+  top: 4px;
+  right: -5px;
+}
+
+.arrow-icon-left::before {
+  top: 4px;
+  left: -5px;
+}
+
 .calendar-container-main {
   width: 75%;
   right: 30px;
-  top: 40px;
+  top: 50px;
   height: 600px;
   position: absolute;
   overflow-y: scroll;
