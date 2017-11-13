@@ -161,7 +161,7 @@ var calendarEvent = document.createElement("div");
 $(calendarEvent).attr("class", "calendar-event timeblock--60 timeblock-prof-3");
 $(calendarEvent).append("<p>Pick up textbooks</p>");
 $(calendarEvent).append("<span>9:40 - 11:10 am</span>");
-$(".calendar--day-7").append(calendarEvent);
+$(".calendar--day-6").append(calendarEvent);
 $(calendarEvent).hide();
 
 // Adding onclick listener to events

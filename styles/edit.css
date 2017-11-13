@@ -41,7 +41,7 @@
 .calendar-container {
   width: 90%;
   margin: 0 auto;
-  height: 300px;
+  height: 200px;
   position: relative;
   overflow-y: scroll;
 }

@@ -41,6 +41,22 @@ var timeslotHash = {
   23: "5am",
 }
 
+var action = getParameterByName("action");
+
+if (action === 'addEvent') {
+  $('.addEdit-header').html("Add Event");
+  $('.field-date').val("November 3, 2017");
+  $('.field-length').val("45min");
+  $('.field-start-time').val("7:15 am");
+}
+
+if (action === 'editEvent') {
+  $('.addEdit-header').html("Edit Event");
+  $('.field-title').val("Catching up with bae");
+  $('.field-date').val("November 3, 2017");
+  $('.field-length').val("180 minutes (3 hours)");
+  $('.field-start-time').val("8:45 am");
+}
 
 $(".current-date").html("Today");
 
@@ -73,4 +89,14 @@ for (var day = 1; day < 8; day++) {
     }
     $(calendarContainer).append(calendarCell);
   }
+}
+
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
