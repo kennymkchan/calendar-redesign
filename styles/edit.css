@@ -5,6 +5,11 @@ html {
   padding: 0;
 }
 
+.cancel-btn-tag {
+  text-decoration: none;
+  color: black;
+}
+
 /* Add/Edit Page Structure */
 .content {
     margin-left: 20px
