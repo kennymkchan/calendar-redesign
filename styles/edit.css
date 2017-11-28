@@ -366,7 +366,7 @@ input[type=radio] {
   position: absolute;
   top: 6px;
   left: 10px;
-  color: rgba(60, 60, 60, 1);
+  color: rgba(100, 100, 100, 1);
 }
 
 .dropdown--category-menu-option {
