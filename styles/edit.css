@@ -347,6 +347,108 @@ input[type=radio] {
   color: rgba(180, 180, 180, 1);
 }
 
+.form--dropdown-reminder {
+  margin-top: 40px;
+  margin-left: 25px;
+  position: relative;
+  height: 40px;
+}
+
+.remind-me-label,
+.in-advance-label {
+  font-size: 15px;
+  font-weight: bold;
+  position: absolute;
+}
+
+.in-advance-label {
+  right: 90px;
+}
+
+.dropdown-menu--remind-default {
+  width: 100px;
+  cursor: pointer;
+  height: 30px;
+  border-bottom: 1px solid rgba(140, 140, 140, 0.3);
+  position: absolute;
+  left: 90px;
+  top: -9px;
+}
+
+.dropdown-menu--remind-default span {
+  width: 100px;
+  position: absolute;
+  bottom: 1px;
+  color: rgba(100, 100, 100, 1);
+  left: 50%;
+  margin-left: -40px;
+}
+
+.notes-label {
+  font-size: 15px;
+  font-weight: bold;
+  margin-left: 25px;
+}
+
+.notes-text-field {
+  width: 350px;
+  height: 200px;
+  display: block;
+  margin-left: 25px;
+  margin-top: 15px;
+  margin-bottom: 30px;
+  border: 2px solid rgba(140, 140, 140, 0.3);
+  padding-left: 8px;
+  padding-top: 5px;
+}
+
+.form--dropdown-repeat {
+  height: 40px;
+  margin-left: 25px;
+  position: relative;
+}
+
+.repeat-label {
+  font-weight: bold;
+  font-size: 15px;
+  position: absolute;
+  top: 8px;
+}
+
+.dropdown-menu--repeat-default {
+  width: 120px;
+  border: 1px solid black;
+  height: 35px;
+  display: inline-block;
+  margin-left: 80px;
+  border: 1px solid rgba(140, 140, 140, 0.3);
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+.dropdown-menu--repeat-default::before {
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid rgba(140, 140, 140, 0.9);
+  content: '';
+  position: absolute;
+  right: 10px;
+  top: 15px;
+}
+
+.dropdown-repeat--default-heading {
+  position: absolute;
+  top: 6px;
+  left: 10px;
+  color: rgba(180, 180, 180, 1);
+}
+
+.repeat-options-menu {
+  display: none;
+}
 
 .calendar-container-main {
   width: 100%;

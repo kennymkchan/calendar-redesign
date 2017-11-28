@@ -133,40 +133,46 @@
     </div>
 
     <div class="middle">
-      <div class="content" style="margin-top:40px"> <b>Remind me in advance:</b>
-        <select>
-          <option selected="Select">Select</option>
-          <option value="">30 minutes</option>
-          <option value="">1 hour</option>
-          <option value="">2 hours</option>
-        </select>
-      </div> <br /> <br />
+      <div class="form--dropdown-reminder">
+        <span class="remind-me-label">Remind me</span>
+        <div class="dropdown-menu--remind-default">
+          <span>30 minutes</span>
+        </div>
+        <span class="in-advance-label">in advance</span>
+      </div>
 
-      <div class="content">
-        <b>Notes:</b> <br />
-        <textarea wrap="physical" rows="10" cols="50" placeholder="Enter any necessary notes here"></textarea>
-      </div> <br /> <br />
+      <div class="form--notes">
+        <span class="notes-label">Notes</span>
+        <textarea
+          class="notes-text-field"
+          placeholder="Enter any necessary notes here">
+        </textarea>
+      </div>
 
-      <div class="content">
-        <b>Repitition</b><br /><br />
-        Repeats:
-        <select>
-          <option selected="Select">Never</option>
-          <option value="">daily</option>
-          <option value="">weekly</option>
-          <option value="">monthly</option>
-        </select><br /><br />
-        On the selected days: <br />
+      <div class="form--dropdown-repeat">
+        <span class="repeat-label">Repeats:</span>
+
+        <div class="dropdown-menu--repeat-default">
+          <span class="dropdown-repeat--default-heading">Daily</span>
+        </div>
+
+        <div class="repeat-options-menu">
+          <div class="repeat-options">daily</div>
+          <div class="repeat-options">weekly</div>
+          <div class="repeat-options">monthly</div>
+        </div>
+      </div>
+
         <span>
-          <input type="checkbox">Mon
-          <input type="checkbox">Tues
-          <input type="checkbox">Wed
-          <input type="checkbox">Thur
-          <input type="checkbox">Fri
-          <input type="checkbox">Sat
-          <input type="checkbox">Sun
+          <input type="checkbox">Monday
+          <input type="checkbox">Tuesday
+          <input type="checkbox">Wednesday
+          <input type="checkbox">Thursday
+          <input type="checkbox">Friday
+          <input type="checkbox">Saturday
+          <input type="checkbox">Sunday
         </span>
-      </div> <br /> <br />
+      </div>
 
     </div>
 
