@@ -28,7 +28,7 @@ html {
   width:33%;
   height:100%;
   float:left;
-  background: #f4f6f9;
+  position: relative;
 }
 
 .edit--header--banner {
@@ -345,4 +345,86 @@ input[type=radio] {
 }
 :-moz-placeholder { /* Firefox 18- */
   color: rgba(180, 180, 180, 1);
+}
+
+
+.calendar-container-main {
+  width: 100%;
+  left: -10px;
+  top: 60px;
+  height: 540px;
+  position: absolute;
+  overflow-y: scroll;
+  z-index: 1;
+}
+
+.cells {
+  position: relative;
+  right: 0;
+  margin-right: 30px;
+  font-size: 0;
+}
+
+.timeslot-cell {
+  height: 80px;
+  width: 90px;
+  font-size: 13px;
+  border: 1px solid transparent;
+  text-align: right;
+  margin-right: 10px;
+  z-index: -1;
+}
+
+.timeslot--header {
+  color: white;
+}
+
+.date--header {
+  font-weight: bold;
+  text-align: center;
+  font-size: 13px;
+  width: 110px;
+}
+
+.current-day--header {
+  color: #607CCB;
+  font-size: 14px;
+}
+
+.calendar-cell {
+  border: 1px solid #E0E0E0;
+  border-bottom: 0px;
+  height: 40px;
+  width: 110px;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+
+/* Adds a bottom border to the last element */
+.calendar-cell-47 {
+  border: 1px solid #E0E0E0;
+}
+
+.calendar-cell:hover {
+  background-color: #BDBDBD;
+}
+
+.calendar-column {
+  display: inline-flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.calendar-column--timeslots {
+  width: 50px;
+}
+
+.preview-label {
+  z-index: 100;
+  position: absolute;
+  left: 60px;
+  top: 15px;
 }

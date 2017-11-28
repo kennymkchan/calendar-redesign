@@ -71,22 +71,28 @@ for (var i = 0; i < 24; i++) {
   $(timeContainer).append(timeCell);
 }
 
+var timeContainer = $(".calendar--timeslots");
+for (var i = 0; i < 24; i++) {
 
-// Loop through the different days in the week and append the timeslots
+  var timeCell = document.createElement("div");
+  $(timeCell).attr("class", "timeslot-cell");
+  $(timeCell).append("<span>" + timeslotHash[i] + "</span>");
+  $(timeContainer).append(timeCell);
+}
 
-for (var day = 1; day < 8; day++) {
 
-  calendarContainer = $(".calendar--wide-" + day);
+for (var day = 1; day < 2; day++) {
+
+  calendarContainer = $(".calendar--day-" + day);
 
   // Creating the calendar cells. Each calendar cell should represent 30min,
   // so one day will have a total of 2 * 24;
   for (var i = 0; i < 48; i++) {
     var calendarCell = document.createElement("div");
-    if (i < 47) {
-      $(calendarCell).attr("class", "calendar-cell-wide");
-    } else {
-      $(calendarCell).attr("class", "calendar-cell--last calendar-cell-wide");
-    }
+    var column = "calendar-cell--column-" + day;
+
+    $(calendarCell).attr("class", "calendar-cell " + column + " calendar-cell-" + i + " " + day + " " + i);
+
     $(calendarContainer).append(calendarCell);
   }
 }
