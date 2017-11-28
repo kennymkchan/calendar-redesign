@@ -72,10 +72,131 @@ html {
 }
 
 .add-calendar--cancel-btn {
-  font-weight: medium
+  font-weight: medium;
   color: black;
   background-color: transparent;
   margin-right: 15px;
+}
+
+.form--time-dropdown {
+  position: relative;
+}
+
+.form--start-dropdown {
+  margin-bottom: 20px;
+}
+
+.dropdown-menu--start-date-default,
+.dropdown-menu--start-time-default {
+  cursor: pointer;
+  height: 30px;
+  border-bottom: 1px solid rgba(140, 140, 140, 0.3);
+  float: right;
+  position: relative;
+}
+
+.dropdown-menu--start-date-default span,
+.dropdown-menu--start-time-default span {
+  position: absolute;
+  bottom: 1px;
+  color: rgba(100, 100, 100, 1);
+  text-align: center;
+  left: 50%;
+}
+
+.dropdown-menu--start-date-default span {
+  width: 130px;
+  margin-left: -65px;
+}
+
+.dropdown-menu--start-time-default span {
+  width: 80px;
+  margin-left: -40px;
+}
+
+.dropdown-menu--start-time-default {
+  margin-right: 30px;
+  width: 80px;
+}
+
+.dropdown-menu--start-date-default {
+  width: 130px;
+  margin-right: 20px;
+}
+
+.start-label {
+  position: absolute;
+  top: 7px;
+  font-weight: bold;
+}
+
+.start-date-option-menu-wrapper {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.dropdown-menu-start-date-options {
+  position: absolute;
+  display: none;
+}
+
+/* END */
+.form--end-dropdown {
+  margin-bottom: 45px;
+}
+
+.dropdown-menu--end-date-default,
+.dropdown-menu--end-time-default {
+  cursor: pointer;
+  height: 30px;
+  border-bottom: 1px solid rgba(140, 140, 140, 0.3);
+  float: right;
+  position: relative;
+}
+
+.dropdown-menu--end-date-default span,
+.dropdown-menu--end-time-default span {
+  position: absolute;
+  bottom: 1px;
+  color: rgba(100, 100, 100, 1);
+  text-align: center;
+  left: 50%;
+}
+
+.dropdown-menu--end-date-default span {
+  width: 130px;
+  margin-left: -65px;
+}
+
+.dropdown-menu--end-time-default span {
+  width: 80px;
+  margin-left: -40px;
+}
+
+.dropdown-menu--end-time-default {
+  margin-right: 30px;
+  width: 80px;
+}
+
+.dropdown-menu--end-date-default {
+  width: 130px;
+  margin-right: 20px;
+}
+
+.end-label {
+  position: absolute;
+  top: 7px;
+  font-weight: bold;
+}
+
+.end-date-option-menu-wrapper {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.dropdown-menu-end-date-options {
+  position: absolute;
+  display: none;
 }
 
 .form-event {
@@ -118,18 +239,29 @@ input[type=radio] {
   border-bottom: 1px solid rgba(140, 140, 140, 0.5);
 }
 
-.form--time-dropdown span {
-  font-weight: bold;
-  font-size: 15px;
+.form--location-input {
+  position: relative;
+  margin-top: 30px;
 }
 
-.form--location-input {
+.location-label {
+  position: absolute;
+  font-weight: bold;
+  font-size: 15px;
+  top: 73px;
+}
+
+.form--location-text-input {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  height: 30px;
+  width: 250px;
   float: right;
   margin-right: 30px;
-  display: block;
-  font-size: 15px;
-  font-weight: bold;
-  margin-top: 30px;
+  padding-left: 1px;
+  border-bottom: 1px solid rgba(140, 140, 140, 0.5);
+  font-size: 16px;
 }
 
 .form--category-dropdown {
@@ -154,6 +286,7 @@ input[type=radio] {
   border: 1px solid rgba(140, 140, 140, 0.3);
   position: relative;
   cursor: pointer;
+  margin-bottom: 30px;
 }
 
 .dropdown-menu--default::before {
