@@ -125,7 +125,6 @@ if (action === 'editEvent') {
 $(".current-date").html("Today");
 
 $(".title-input-text").focusout(function() {
-    console.log("Out of focus");
     createTimeBlock();
 });
 
@@ -139,6 +138,16 @@ function createTimeBlock() {
   }
   var start = $('.dropdown-menu-start-time-heading').html();
   var end = $('.dropdown-menu-end-time-heading').html();
+  var category = $('.dropdown-category--default-heading').html();
+
+  var categoryClass = '';
+  if (category == "4A study term") {
+    categoryClass = 'timeblock-1';
+  } else if (category == "Personal event") {
+    categoryClass = 'timeblock-2';
+  } else {
+    categoryClass = 'timeblock-3';
+  }
 
   var startTime = reverseTimeHash[start];
   var endTime = reverseTimeHash[end];
@@ -156,7 +165,7 @@ function createTimeBlock() {
     var displacement = timeblockDisplacement + 'px';
 
     var calendarEvent = document.createElement("div");
-    $(calendarEvent).attr("class", "calendar-event timeblock timeblock-3");
+    $(calendarEvent).attr("class", "calendar-event timeblock " + categoryClass);
     $(calendarEvent).append("<p>" + title + "</p>");
     $(calendarEvent).css("height", height);
     $(calendarEvent).css("top", displacement);
@@ -296,6 +305,8 @@ $(".dropdown-menu--default").click(function() {
 $(".dropdown-category-option").click(function(event) {
   $(".dropdown-category--default-heading").html(event.target.textContent);
   $(".dropdown--category-menu-option").hide();
+  deleteTimeblocks();
+  createTimeBlock();
   toggleCategory = true;
 });
 
