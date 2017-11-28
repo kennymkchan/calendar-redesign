@@ -188,3 +188,51 @@ $(".dropdown-category-option").click(function(event) {
   $(".dropdown--category-menu-option").hide();
   toggleCategory = true;
 });
+
+var toggleReminder = true;
+$(".dropdown-menu--remind-default").click(function() {
+  if (toggleReminder) {
+    $(".dropdown-menu-reminder-options").show();
+  } else {
+    $(".dropdown-menu-reminder-options").hide();
+  }
+  toggleReminder = !toggleReminder;
+});
+
+$(".dropdown-reminder-option").click(function(event) {
+  $(".remind-me-minutes").html(event.target.textContent);
+  $(".dropdown-menu-reminder-options").hide();
+  toggleReminder = true;
+});
+
+var toggleRepeat = true;
+$(".dropdown-menu--repeat-default").click(function() {
+  if (toggleRepeat) {
+    $(".repeat-options-menu").show();
+  } else {
+    $(".repeat-options-menu").hide();
+  }
+  toggleRepeat = !toggleRepeat;
+});
+
+$(".repeat-options").click(function(event) {
+  $(".dropdown-repeat--default-heading").html(event.target.textContent);
+  $(".repeat-options-menu").hide();
+  toggleRepeat = true;
+});
+
+var toggleInvite = true;
+$(".dropdown-menu--invite-default").click(function() {
+  if (toggleInvite) {
+    $(".invite-options-menu").show();
+  } else {
+    $(".invite-options-menu").hide();
+  }
+  toggleInvite = !toggleInvite;
+});
+
+$(".invite-options").click(function(event) {
+  $(".dropdown-invite--default-heading").html(event.target.textContent);
+  $(".invite-options-menu").hide();
+  toggleInvite = true;
+});
