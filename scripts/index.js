@@ -86,28 +86,12 @@ for (var day = 1; day < 8; day++) {
   // so one day will have a total of 2 * 24;
   for (var i = 0; i < 48; i++) {
     var calendarCell = document.createElement("div");
-    if (i < 47) {
-      $(calendarCell).attr("class", "calendar-cell");
-    } else {
-      $(calendarCell).attr("class", "calendar-cell--last calendar-cell");
-    }
-    $(calendarContainer).append(calendarCell);
-  }
-}
+    var column = "calendar-cell--column-" + day;
 
-for (var day = 1; day < 8; day++) {
+    $(calendarEvent).attr("class", column)
 
-  calendarContainer = $(".calendar--wide-" + day);
+    $(calendarCell).attr("class", "calendar-cell " + column + " calendar-cell-" + i + " " + day + " " + i);
 
-  // Creating the calendar cells. Each calendar cell should represent 30min,
-  // so one day will have a total of 2 * 24;
-  for (var i = 0; i < 48; i++) {
-    var calendarCell = document.createElement("div");
-    if (i < 47) {
-      $(calendarCell).attr("class", "calendar-cell-wide");
-    } else {
-      $(calendarCell).attr("class", "calendar-cell--last calendar-cell");
-    }
     $(calendarContainer).append(calendarCell);
   }
 }
@@ -124,10 +108,14 @@ $(calendarEvent).append("<p>Catching up with bae</p>");
 $(calendarEvent).append("<span>8:45 - 11:45 am</span>")
 $(".calendar--day-5").append(calendarEvent);
 
+var height = 40 - 3;
+height = height + "px";
 var calendarEvent = document.createElement("div");
-$(calendarEvent).attr("class", "calendar-event timeblock--30 timeblock-3");
-$(calendarEvent).append("<p>Breakfast</p>");
-$(calendarEvent).append("<span>8:15 - 9:10 am</span>");
+$(calendarEvent).attr("class", "calendar-event timeblock-30 timeblock-3");
+$(calendarEvent).append("<p>Pokemon event</p>");
+$(calendarEvent).css("height", height);
+$(calendarEvent).css("top", "19px");
+$(calendarEvent).css("position", "absolute");
 $(".calendar--day-2").append(calendarEvent);
 
 var calendarEvent = document.createElement("div");
@@ -143,26 +131,26 @@ $(calendarEvent).append("<span>10:40 - 1:40 pm</span>");
 $(".calendar--day-1").append(calendarEvent);
 
 // Other demo events
-var calendarEvent = document.createElement("div");
-$(calendarEvent).attr("class", "calendar-event timeblock--60 timeblock-prof-1");
-$(calendarEvent).append("<p>Unavailble</p>");
-$(calendarEvent).append("<span>10:30 - 12:00 pm</span>");
-$(".calendar--day-3").append(calendarEvent);
-$(calendarEvent).hide();
-
-var calendarEvent = document.createElement("div");
-$(calendarEvent).attr("class", "calendar-event timeblock--60 timeblock-prof-2");
-$(calendarEvent).append("<p>Breakfast Party with department</p>");
-$(calendarEvent).append("<span>7:20 - 8:50 am</span>");
-$(".calendar--day-1").append(calendarEvent);
-$(calendarEvent).hide();
-
-var calendarEvent = document.createElement("div");
-$(calendarEvent).attr("class", "calendar-event timeblock--60 timeblock-prof-3");
-$(calendarEvent).append("<p>Pick up textbooks</p>");
-$(calendarEvent).append("<span>9:40 - 11:10 am</span>");
-$(".calendar--day-6").append(calendarEvent);
-$(calendarEvent).hide();
+// var calendarEvent = document.createElement("div");
+// $(calendarEvent).attr("class", "calendar-event timeblock--60 timeblock-prof-1");
+// $(calendarEvent).append("<p>Unavailble</p>");
+// $(calendarEvent).append("<span>10:30 - 12:00 pm</span>");
+// $(".calendar--day-3").append(calendarEvent);
+// $(calendarEvent).hide();
+//
+// var calendarEvent = document.createElement("div");
+// $(calendarEvent).attr("class", "calendar-event timeblock--60 timeblock-prof-2");
+// $(calendarEvent).append("<p>Breakfast Party with department</p>");
+// $(calendarEvent).append("<span>7:20 - 8:50 am</span>");
+// $(".calendar--day-1").append(calendarEvent);
+// $(calendarEvent).hide();
+//
+// var calendarEvent = document.createElement("div");
+// $(calendarEvent).attr("class", "calendar-event timeblock--60 timeblock-prof-3");
+// $(calendarEvent).append("<p>Pick up textbooks</p>");
+// $(calendarEvent).append("<span>9:40 - 11:10 am</span>");
+// $(".calendar--day-6").append(calendarEvent);
+// $(calendarEvent).hide();
 
 // Adding onclick listener to events
 $(".view-filter").click(function() {
@@ -177,8 +165,16 @@ $('.remove-calendar').click(function() {
   removeProfCalendar();
 });
 
-$('.calendar-cell').click(function() {
-  var url = '/calendar-redesign/addEdit.html?' + '&date=selected&action=addEvent';
+$('.calendar-cell').click(function(event) {
+
+  var target = event.target;
+
+  var classArray = $(target).attr('class').split(/\s+/);
+
+  var day = classArray[3];
+  var hour = classArray[4];
+
+  var url = '/calendar-redesign/addEdit.html?' + '&day=' + day + '&hour' + hour;
   window.location.href = url;
 });
 

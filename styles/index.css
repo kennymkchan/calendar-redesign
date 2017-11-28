@@ -113,7 +113,7 @@ html {
 }
 
 /* Adds a bottom border to the last element */
-.calendar-cell--last {
+.calendar-cell-47 {
   border: 1px solid #E0E0E0;
 }
 
@@ -274,53 +274,55 @@ html {
 }
 
 .timeblock--30 {
+  position: absolute;
   height: 80px;
 }
 
 .timeblock--60 {
+  position: absolute;
   height: 120px;
 }
 
 .timeblock--120 {
+  position: absolute;
   height: 240px;
 }
 
 .timeblock-1 {
   background-color: #CC739E;
-  margin-top: -1900px;
+  top: 100px;
 }
 
 .timeblock-2 {
   background-color: #7CB9CA;
-  margin-top: -1700px;
+  top: 400px;
 }
 
 .timeblock-3 {
   background-color: #D5A883;
-  margin-top: -1750px;
 }
 
 .timeblock-4 {
   background-color: #D5A883;
-  margin-top: -1450px;
+  top: 200px;
 }
 
 .timeblock-5 {
   background-color: #CC739E;
-  margin-top: -1550px;
+  top: 100px;
 }
 
 .timeblock-prof-1 {
   background-color: #388E3C;
-  margin-top: -1560px;
+  top: 400px;
 }
 
 .timeblock-prof-2 {
   background-color: #388E3C;
-  margin-top: -500px;
+  top: 100px;
 }
 
 .timeblock-prof-3 {
   background-color: #388E3C;
-  margin-top: -1700px;
+  top: 100px;
 }

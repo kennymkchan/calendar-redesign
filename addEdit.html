@@ -6,48 +6,42 @@
     <meta name="description"
       content="Google Calendar Re-design for web platforms">
 
-    <link rel="stylesheet" type="text/css" href="styles/index.css">
     <link rel="stylesheet" type="text/css" href="styles/edit.css">
   </head>
 
   <body>
-    <!-- <div class="application-container">
-      <h1 class="container__title content">Add / Edit Event<h1>
-    </div> -->
-    <div class="left form-style-6">
-      <h2 class="addEdit-header">Edit Event</h2>
-      <form class="pure-form pure-form-aligned">
 
-        <span><b>Type:</b>
-          <input class="content" type="radio" name="gender" checked> Personal
-          <input class="content" type="radio" name="gender"> Group<br> <br />
-        </span>
-        <input type="text" placeholder="Title"></span> <br /> <br />
-        <input type="text" placeholder="Date"></span> <br /> <br />
-        <input type="text" placeholder="Length"></span> <br /> <br />
-        <input type="text" placeholder="Start Time"></span> <br /> <br />
-        <input type="text" placeholder="Category"></span> <br /> <br />
-        <input type="text" placeholder="Location"></span> <br /> <br />
-      </form>
+    <div class="edit--header--banner">
+      <h1 class="addEdit-header">Edit Event</h1>
 
-      <div class="calendar-container container">
-        <div class="cells">
-          <div class="calendar-column calendar--timeslots-thin">
-            <div class="date--header">
-              <span class="timeslot--header"></span>
-              <span class="week-date-1"></span>
-            </div>
-          </div>
+      <div class="addEdit-header--buttons">
+        <div class="cta-button add-calendar--cancel-btn">
+          <span>Cancel</span>
+        </div>
 
-          <div class="calendar-column calendar--wide-1">
-            <div class="date--header">
-              <b><span class="current-date"></span></b>
-              <span class="week-date-1"></span>
-            </div>
-          </div>
+        <div class="cta-button save-calendar--btn">
+          <span>Save</span>
         </div>
       </div>
+    </div>
 
+    <div class="left">
+      <form class="form-event">
+
+        <div class="form--type-radio">
+          <span>Type:</span>
+            <input class="type--radio-option check" type="radio" name="type" checked><label>Personal</label>
+            <input class="type--radio-option" type="radio" name="type"><label>Group</label>
+        </div>
+        <div class="form--title-input">
+          <input type="text" placeholder="Title">
+        </div>
+        <input type="text" placeholder="Date">
+        <input type="text" placeholder="Length">
+        <input type="text" placeholder="Start Time">
+        <input type="text" placeholder="Category">
+        <input type="text" placeholder="Location">
+      </form>
     </div>
 
     <div class="middle">
@@ -103,15 +97,6 @@
             <option value="User 6">User 6</option>
           </select>
         </div> <br /><br />
-        <a href="/index.html">
-          <div class="add-event--btn">
-            <span>Save</span>
-          </div> </a><br /><br />
-        <a href="/index.html">
-          <div class="add-event--btn-red">
-            <span>Cancel</span>
-          </div>
-        </a>
       </span>
     </div>
   </body>
