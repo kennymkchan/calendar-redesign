@@ -242,13 +242,14 @@ input[type=radio] {
 .form--location-input {
   position: relative;
   margin-top: 30px;
+  display: block;
 }
 
 .location-label {
   position: absolute;
   font-weight: bold;
   font-size: 15px;
-  top: 73px;
+  top: 7px;
 }
 
 .form--location-text-input {
@@ -262,12 +263,14 @@ input[type=radio] {
   padding-left: 1px;
   border-bottom: 1px solid rgba(140, 140, 140, 0.5);
   font-size: 16px;
+  display: block;
 }
 
 .form--category-dropdown {
   margin-top: 30px;
   margin-bottom: 30px;
   position: relative;
+  height: 40px;
 }
 
 .category-label {
