@@ -89,9 +89,8 @@ for (var day = 1; day < 2; day++) {
   // so one day will have a total of 2 * 24;
   for (var i = 0; i < 48; i++) {
     var calendarCell = document.createElement("div");
-    var column = "calendar-cell--column-" + day;
 
-    $(calendarCell).attr("class", "calendar-cell " + column + " calendar-cell-" + i + " " + day + " " + i);
+    $(calendarCell).attr("class", "calendar-cell " + " calendar-cell-" + i + " " + i);
 
     $(calendarContainer).append(calendarCell);
   }
@@ -106,3 +105,86 @@ function getParameterByName(name, url) {
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
+
+var toggleStartDate = true;
+$(".dropdown-menu--start-date-default").click(function() {
+  if (toggleStartDate) {
+    $(".dropdown-menu-start-date-options").show();
+  } else {
+    $(".dropdown-menu-start-date-options").hide();
+  }
+  toggleStartDate = !toggleStartDate;
+});
+
+$(".dropdown-start-options").click(function(event) {
+  $(".dropdown-menu-start-date-heading").html(event.target.textContent);
+  $(".dropdown-menu-start-date-options").hide();
+  toggleStartDate = true;
+});
+
+var toggleStartTime = true;
+$(".dropdown-menu--start-time-default").click(function() {
+  if (toggleStartTime) {
+    $(".dropdown-menu-start-time-options").show();
+  } else {
+    $(".dropdown-menu-start-time-options").hide();
+  }
+  toggleStartTime = !toggleStartTime;
+});
+
+$(".dropdown-start-time-option").click(function(event) {
+  $(".dropdown-menu-start-time-heading").html(event.target.textContent);
+  $(".dropdown-menu-start-time-options").hide();
+  toggleStartTime = true;
+});
+
+
+
+
+var toggleEndDate = true;
+$(".dropdown-menu--end-date-default").click(function() {
+  if (toggleEndDate) {
+    $(".dropdown-menu-end-date-options").show();
+  } else {
+    $(".dropdown-menu-end-date-options").hide();
+  }
+  toggleEndDate = !toggleEndDate;
+});
+
+$(".dropdown-end-options").click(function(event) {
+  $(".dropdown-menu-end-date-heading").html(event.target.textContent);
+  $(".dropdown-menu-end-date-options").hide();
+  toggleEndDate = true;
+});
+
+var toggleEndTime = true;
+$(".dropdown-menu--end-time-default").click(function() {
+  if (toggleEndTime) {
+    $(".dropdown-menu-end-time-options").show();
+  } else {
+    $(".dropdown-menu-end-time-options").hide();
+  }
+  toggleEndTime = !toggleEndTime;
+});
+
+$(".dropdown-end-time-option").click(function(event) {
+  $(".dropdown-menu-end-time-heading").html(event.target.textContent);
+  $(".dropdown-menu-end-time-options").hide();
+  toggleEndTime = true;
+});
+
+var toggleCategory = true;
+$(".dropdown-menu--default").click(function() {
+  if (toggleCategory) {
+    $(".dropdown--category-menu-option").show();
+  } else {
+    $(".dropdown--category-menu-option").hide();
+  }
+  toggleCategory = !toggleCategory;
+});
+
+$(".dropdown-category-option").click(function(event) {
+  $(".dropdown-category--default-heading").html(event.target.textContent);
+  $(".dropdown--category-menu-option").hide();
+  toggleCategory = true;
+});
