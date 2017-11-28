@@ -84,6 +84,7 @@ html {
 
 .form--start-dropdown {
   margin-bottom: 20px;
+  position: relative;
 }
 
 .dropdown-menu--start-date-default,
@@ -178,6 +179,7 @@ html {
 /* END */
 .form--end-dropdown {
   margin-bottom: 45px;
+  position: relative;
 }
 
 .dropdown-menu--end-date-default,
