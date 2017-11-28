@@ -41,6 +41,70 @@ var timeslotHash = {
   23: "5am",
 }
 
+var timeHash = {
+  1: "6:00am",
+  2: "6:30am",
+  3: "7:00am",
+  4: "7:30am",
+  5: "8:00am",
+  6: "8:30am",
+  7: "9:00am",
+  8: "9:30am",
+  9: "10:00am",
+  10: "10:30am",
+  11: "11:00am",
+  12: "11:30am",
+  13: "12:00pm",
+  14: "12:30pm",
+  15: "1:00pm",
+  16: "1:30pm",
+  17: "2:00pm",
+  18: "2:30pm",
+  19: "3:00pm",
+  20: "3:30pm",
+  21: "4:00pm",
+  22: "4:30pm",
+  23: "5:00pm",
+  24: "5:30pm",
+  25: "6:00pm",
+  26: "6:30pm",
+  27: "7:00pm",
+  28: "7:30pm",
+  29: "8:00pm",
+  30: "8:30pm",
+  31: "9:00pm",
+  32: "9:30pm",
+  33: "10:00pm",
+  34: "10:30pm",
+  35: "11:00pm",
+  36: "11:30pm",
+  37: "12:00am",
+  38: "12:30am",
+  39: "1:00am",
+  40: "1:30am",
+  41: "2:00am",
+  42: "2:30am",
+  43: "3:00am",
+  44: "3:30am",
+  45: "4:00am",
+  46: "4:30am",
+  47: "5:00am",
+  48: "5:30am",
+}
+
+function invert(obj) {
+  var new_obj = {};
+
+  for (var prop in obj) {
+    if(obj.hasOwnProperty(prop)) {
+      new_obj[obj[prop]] = prop;
+    }
+  }
+  return new_obj;
+};
+
+reverseTimeHash = invert(timeHash);
+
 var action = getParameterByName("action");
 
 if (action === 'addEvent') {
@@ -59,6 +123,51 @@ if (action === 'editEvent') {
 }
 
 $(".current-date").html("Today");
+
+$(".title-input-text").focusout(function() {
+    console.log("Out of focus");
+    createTimeBlock();
+});
+
+function createTimeBlock() {
+
+  var boolTitle = true;
+
+  var title = $(".title-input-text").val();
+  if (title === '') {
+    boolTitle = false;
+  }
+  var start = $('.dropdown-menu-start-time-heading').html();
+  var end = $('.dropdown-menu-end-time-heading').html();
+
+  var startTime = reverseTimeHash[start];
+  var endTime = reverseTimeHash[end];
+
+  var timeblockHeight = ((endTime - startTime) * 41) + 5;
+  var timeblockDisplacement = (startTime - 1) * 40;
+
+  if (timeblockHeight > 0) {
+
+    if (!boolTitle) {
+      title = "Undefined";
+    }
+
+    var height = timeblockHeight + "px";
+    var displacement = timeblockDisplacement + 'px';
+
+    var calendarEvent = document.createElement("div");
+    $(calendarEvent).attr("class", "calendar-event timeblock timeblock-3");
+    $(calendarEvent).append("<p>" + title + "</p>");
+    $(calendarEvent).css("height", height);
+    $(calendarEvent).css("top", displacement);
+    $(calendarEvent).css("position", "absolute");
+    $(".calendar--day-1").append(calendarEvent);
+  }
+}
+
+function deleteTimeblocks() {
+  $(".timeblock").remove()
+}
 
 var timeContainer = $(".calendar--timeslots-thin");
 for (var i = 0; i < 24; i++) {
@@ -135,11 +244,10 @@ $(".dropdown-menu--start-time-default").click(function() {
 $(".dropdown-start-time-option").click(function(event) {
   $(".dropdown-menu-start-time-heading").html(event.target.textContent);
   $(".dropdown-menu-start-time-options").hide();
+  deleteTimeblocks();
+  createTimeBlock();
   toggleStartTime = true;
 });
-
-
-
 
 var toggleEndDate = true;
 $(".dropdown-menu--end-date-default").click(function() {
@@ -170,6 +278,8 @@ $(".dropdown-menu--end-time-default").click(function() {
 $(".dropdown-end-time-option").click(function(event) {
   $(".dropdown-menu-end-time-heading").html(event.target.textContent);
   $(".dropdown-menu-end-time-options").hide();
+  deleteTimeblocks();
+  createTimeBlock();
   toggleEndTime = true;
 });
 

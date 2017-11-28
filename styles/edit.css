@@ -723,3 +723,51 @@ input[type="checkbox"] {
   left: 60px;
   top: 15px;
 }
+
+/*******************************************/
+
+.calendar-event {
+  font-size: 12px;
+  color: white;
+  position: relative;
+  width: 110px;
+  cursor: pointer;
+}
+
+.calendar-event p {
+  margin-left: 5px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.calendar-event span {
+  margin-left: 5px;
+}
+
+.timeblock {
+  position: absolute;
+}
+
+.timeblock-1 {
+  background-color: #CC739E;
+  top: 100px;
+}
+
+.timeblock-2 {
+  background-color: #7CB9CA;
+  top: 400px;
+}
+
+.timeblock-3 {
+  background-color: #D5A883;
+}
+
+.timeblock-4 {
+  background-color: #D5A883;
+  top: 200px;
+}
+
+.timeblock-5 {
+  background-color: #CC739E;
+  top: 100px;
+}

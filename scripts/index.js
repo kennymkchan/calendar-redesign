@@ -112,7 +112,7 @@ var height = 40 - 3;
 height = height + "px";
 var calendarEvent = document.createElement("div");
 $(calendarEvent).attr("class", "calendar-event timeblock-30 timeblock-3");
-$(calendarEvent).append("<p>Pokemon event</p>");
+$(calendarEvent).append("<p>Gym</p>");
 $(calendarEvent).css("height", height);
 $(calendarEvent).css("top", "19px");
 $(calendarEvent).css("position", "absolute");
