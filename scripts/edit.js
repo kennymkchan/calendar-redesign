@@ -159,31 +159,48 @@ $(".form--location-text-input").focusout(function() {
 });
 
 $('.save-calendar--btn').click(function() {
+
+  var canProceed = true;
+
+  $('.title-error').hide();
+  $('.date-error').hide();
+
   var title = $(".title-input-text").val() || '';
   var start = $('.dropdown-menu-start-time-heading').html() || '';
   var end = $('.dropdown-menu-end-time-heading').html() || '';
   var category = $('.dropdown-category--default-heading').html() || '';
   var location = $(".form--location-text-input").val() || '';
-
   var startDate = $('.dropdown-menu-start-date-heading').html() || 3;
 
-  if (category == "4A study term") {
-    categoryClass = 'timeblock-1';
-  } else if (category == "Personal event") {
-    categoryClass = 'timeblock-2';
-  } else {
-    categoryClass = 'timeblock-3';
+  if (title == '') {
+    $('.title-error').show();
+    canProceed = false;
   }
 
-  var url = '/calendar-redesign?'
-          + '&title=' + title
-          + '&start=' + reverseTimeHash[start]
-          + '&end=' + reverseTimeHash[end]
-          + '&category=' + categoryClass
-          + '&date=' + reverseDateHash[startDate]
-          + '&location=' + location;
+  if (parseInt(reverseTimeHash[start]) >= parseInt(reverseTimeHash[end])) {
+    $('.date-error').show();
+    canProceed = false;
+  }
 
-  window.location.href = url;
+  if (canProceed) {
+    if (category == "4A study term") {
+      categoryClass = 'timeblock-1';
+    } else if (category == "Personal event") {
+      categoryClass = 'timeblock-2';
+    } else {
+      categoryClass = 'timeblock-3';
+    }
+
+    var url = '/calendar-redesign?'
+            + '&title=' + title
+            + '&start=' + reverseTimeHash[start]
+            + '&end=' + reverseTimeHash[end]
+            + '&category=' + categoryClass
+            + '&date=' + reverseDateHash[startDate]
+            + '&location=' + location;
+
+    window.location.href = url;
+  }
 });
 
 function createTimeBlock() {
