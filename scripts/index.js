@@ -300,6 +300,14 @@ $('.remove-calendar').click(function() {
   removeProfCalendar();
 });
 
+$('.import-calendar').click(function() {
+  $('.import-background').show();
+});
+
+$('.fa-times').click(function() {
+  $('.import-background').hide();
+});
+
 $('.calendar-cell').click(function(event) {
 
   var target = event.target;
