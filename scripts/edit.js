@@ -158,7 +158,7 @@ $(".form--location-text-input").focusout(function() {
     createTimeBlock();
 });
 
-$('.save-appointment').click(function() {
+$('.save-calendar--btn').click(function() {
   var title = $(".title-input-text").val() || '';
   var start = $('.dropdown-menu-start-time-heading').html() || '';
   var end = $('.dropdown-menu-end-time-heading').html() || '';
