@@ -259,7 +259,8 @@ html {
   font-size: 12px;
   color: white;
   position: relative;
-  width: 110px;
+  width: 108px;
+  margin-left: 2px;
   cursor: pointer;
 }
 

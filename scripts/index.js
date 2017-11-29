@@ -43,6 +43,57 @@ var timeslotHash = {
   23: "5am",
 }
 
+var timeHash = {
+  1: "6:00am",
+  2: "6:30am",
+  3: "7:00am",
+  4: "7:30am",
+  5: "8:00am",
+  6: "8:30am",
+  7: "9:00am",
+  8: "9:30am",
+  9: "10:00am",
+  10: "10:30am",
+  11: "11:00am",
+  12: "11:30am",
+  13: "12:00pm",
+  14: "12:30pm",
+  15: "1:00pm",
+  16: "1:30pm",
+  17: "2:00pm",
+  18: "2:30pm",
+  19: "3:00pm",
+  20: "3:30pm",
+  21: "4:00pm",
+  22: "4:30pm",
+  23: "5:00pm",
+  24: "5:30pm",
+  25: "6:00pm",
+  26: "6:30pm",
+  27: "7:00pm",
+  28: "7:30pm",
+  29: "8:00pm",
+  30: "8:30pm",
+  31: "9:00pm",
+  32: "9:30pm",
+  33: "10:00pm",
+  34: "10:30pm",
+  35: "11:00pm",
+  36: "11:30pm",
+  37: "12:00am",
+  38: "12:30am",
+  39: "1:00am",
+  40: "1:30am",
+  41: "2:00am",
+  42: "2:30am",
+  43: "3:00am",
+  44: "3:30am",
+  45: "4:00am",
+  46: "4:30am",
+  47: "5:00am",
+  48: "5:30am",
+}
+
 var filter = false;
 var addCalendarBool = true;
 
@@ -53,6 +104,47 @@ var year = moment.year();
 var currDate = day + " " + monthHash[month] + ", " + year;
 
 $(".current-date").html(currDate);
+
+populateTimeblock();
+
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+function populateTimeblock() {
+
+  var title = getParameterByName("title");
+  var start = getParameterByName("start");
+  var end = getParameterByName("end");
+  var category = getParameterByName("category");
+  var location = getParameterByName("location");
+
+  var timeblockHeight = ((end - start) * 40);
+  var timeblockDisplacement = (start - 1) * 40;
+
+  console.log(timeblockDisplacement);
+
+  timeblockDisplacement = timeblockDisplacement + 19;
+
+  var height = timeblockHeight;
+
+  height = height + "px";
+  var calendarEvent = document.createElement("div");
+  $(calendarEvent).attr("class", "calendar-event timeblock-30 " + category);
+  $(calendarEvent).append("<p style='font-size: 12px;'>" + title + "</p>");
+  $(calendarEvent).append("<p style='font-weight: 100; margin-top: 0;'>" + location + "</p>");
+  $(calendarEvent).append("<span>" + timeHash[start] + ' - ' + timeHash[end] + "</span>")
+  $(calendarEvent).css("height", height);
+  $(calendarEvent).css("top", timeblockDisplacement + 'px');
+  $(calendarEvent).css("position", "absolute");
+  $(".calendar--day-2").append(calendarEvent);
+}
 
 // Create the timeslot column on the side
 // Only need 24 because there are 24 hours in the day. Each hour will have
@@ -99,35 +191,25 @@ for (var day = 1; day < 8; day++) {
 var calendarEvent = document.createElement("div");
 $(calendarEvent).attr("class", "calendar-event timeblock--60 timeblock-1");
 $(calendarEvent).append("<p>Soccer Practice</p>");
-$(calendarEvent).append("<span>6:15 - 7:45 am</span>");
+$(calendarEvent).append("<span>7:00am - 8:30am</span>");
 $(".calendar--day-4").append(calendarEvent);
 
 var calendarEvent = document.createElement("div");
 $(calendarEvent).attr("class", "calendar-event timeblock--120 timeblock-2");
 $(calendarEvent).append("<p>Catching up with bae</p>");
-$(calendarEvent).append("<span>8:45 - 11:45 am</span>")
+$(calendarEvent).append("<span>10:45am - 1:45pm</span>")
 $(".calendar--day-5").append(calendarEvent);
-
-var height = 40 - 3;
-height = height + "px";
-var calendarEvent = document.createElement("div");
-$(calendarEvent).attr("class", "calendar-event timeblock-30 timeblock-3");
-$(calendarEvent).append("<p>Gym</p>");
-$(calendarEvent).css("height", height);
-$(calendarEvent).css("top", "19px");
-$(calendarEvent).css("position", "absolute");
-$(".calendar--day-2").append(calendarEvent);
 
 var calendarEvent = document.createElement("div");
 $(calendarEvent).attr("class", "calendar-event timeblock--60 timeblock-4");
-$(calendarEvent).append("<p>Lunch with Professor</p>");
-$(calendarEvent).append("<span>11:50 - 12:50 pm</span>");
+$(calendarEvent).append("<p>Breakfast with Professor</p>");
+$(calendarEvent).append("<span>8:15am - 9:45am</span>");
 $(".calendar--day-7").append(calendarEvent);
 
 var calendarEvent = document.createElement("div");
 $(calendarEvent).attr("class", "calendar-event timeblock--120 timeblock-5");
 $(calendarEvent).append("<p>Interview with Google</p>");
-$(calendarEvent).append("<span>10:40 - 1:40 pm</span>");
+$(calendarEvent).append("<span>7:00am - 10:00am</span>");
 $(".calendar--day-1").append(calendarEvent);
 
 // Other demo events
