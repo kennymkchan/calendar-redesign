@@ -128,6 +128,35 @@ $(".title-input-text").focusout(function() {
     createTimeBlock();
 });
 
+$(".form--location-text-input").focusout(function() {
+    createTimeBlock();
+});
+
+$('.save-appointment').click(function() {
+  var title = $(".title-input-text").val() || '';
+  var start = $('.dropdown-menu-start-time-heading').html() || '';
+  var end = $('.dropdown-menu-end-time-heading').html() || '';
+  var category = $('.dropdown-category--default-heading').html() || '';
+  var location = $(".form--location-text-input").val() || '';
+
+  if (category == "4A study term") {
+    categoryClass = 'timeblock-1';
+  } else if (category == "Personal event") {
+    categoryClass = 'timeblock-2';
+  } else {
+    categoryClass = 'timeblock-3';
+  }
+
+  var url = '/calendar-redesign?'
+          + '&title=' + title
+          + '&start=' + reverseTimeHash[start]
+          + '&end=' + reverseTimeHash[end]
+          + '&category=' + categoryClass
+          + '&location=' + location;
+
+  window.location.href = url;
+});
+
 function createTimeBlock() {
 
   var boolTitle = true;
@@ -139,6 +168,7 @@ function createTimeBlock() {
   var start = $('.dropdown-menu-start-time-heading').html();
   var end = $('.dropdown-menu-end-time-heading').html();
   var category = $('.dropdown-category--default-heading').html();
+  var location = $(".form--location-text-input").val();
 
   var categoryClass = '';
   if (category == "4A study term") {
@@ -166,7 +196,8 @@ function createTimeBlock() {
 
     var calendarEvent = document.createElement("div");
     $(calendarEvent).attr("class", "calendar-event timeblock " + categoryClass);
-    $(calendarEvent).append("<p>" + title + "</p>");
+    $(calendarEvent).append("<p style='font-size: 14px;'>" + title + "</p>");
+    $(calendarEvent).append("<p style='font-weight: 100; margin-top: 0;'>" + location + "</p>");
     $(calendarEvent).css("height", height);
     $(calendarEvent).css("top", displacement);
     $(calendarEvent).css("position", "absolute");
