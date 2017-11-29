@@ -41,6 +41,16 @@ var timeslotHash = {
   23: "5am",
 }
 
+var dateHash = {
+  1: "Nov 27, 2017",
+  2: "Nov 28, 2017",
+  3: "Nov 29, 2017",
+  4: "Nov 30, 2017",
+  5: "Dec 1, 2017",
+  6: "Dec 2, 2017",
+  7: "Dec 3, 2017",
+}
+
 var timeHash = {
   1: "6:00am",
   2: "6:30am",
@@ -104,8 +114,11 @@ function invert(obj) {
 };
 
 reverseTimeHash = invert(timeHash);
+reverseDateHash = invert(dateHash);
 
 var action = getParameterByName("action");
+
+prepopulate();
 
 if (action === 'addEvent') {
   $('.addEdit-header').html("Add Event");
@@ -124,6 +137,19 @@ if (action === 'editEvent') {
 
 $(".current-date").html("Today");
 
+function prepopulate() {
+  var hour = parseInt(getParameterByName("hour")) + 1;
+  var day = parseInt(getParameterByName("day"));
+
+  if (hour && day) {
+    var suggestedEnd = hour + 2;
+    var startTime = $('.dropdown-menu-start-time-heading').html(timeHash[parseInt(hour)]);
+    var startDate = $('.dropdown-menu-start-date-heading').html(dateHash[day]);
+    var endDate = $('.dropdown-menu-end-date-heading').html(dateHash[day]);
+    var endTime = $('.dropdown-menu-end-time-heading').html(timeHash[parseInt(suggestedEnd)]);
+  }
+}
+
 $(".title-input-text").focusout(function() {
     createTimeBlock();
 });
@@ -139,6 +165,8 @@ $('.save-appointment').click(function() {
   var category = $('.dropdown-category--default-heading').html() || '';
   var location = $(".form--location-text-input").val() || '';
 
+  var startDate = $('.dropdown-menu-start-date-heading').html() || 3;
+
   if (category == "4A study term") {
     categoryClass = 'timeblock-1';
   } else if (category == "Personal event") {
@@ -152,6 +180,7 @@ $('.save-appointment').click(function() {
           + '&start=' + reverseTimeHash[start]
           + '&end=' + reverseTimeHash[end]
           + '&category=' + categoryClass
+          + '&date=' + reverseDateHash[startDate]
           + '&location=' + location;
 
   window.location.href = url;

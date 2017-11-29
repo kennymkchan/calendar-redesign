@@ -124,6 +124,7 @@ function populateTimeblock() {
   var end = getParameterByName("end");
   var category = getParameterByName("category");
   var location = getParameterByName("location");
+  var date = getParameterByName("date");
 
   var timeblockHeight = ((end - start) * 40);
   var timeblockDisplacement = (start - 1) * 40;
@@ -143,7 +144,7 @@ function populateTimeblock() {
   $(calendarEvent).css("height", height);
   $(calendarEvent).css("top", timeblockDisplacement + 'px');
   $(calendarEvent).css("position", "absolute");
-  $(".calendar--day-2").append(calendarEvent);
+  $(".calendar--day-" + date).append(calendarEvent);
 }
 
 // Create the timeslot column on the side
@@ -308,7 +309,7 @@ $('.calendar-cell').click(function(event) {
   var day = classArray[3];
   var hour = classArray[4];
 
-  var url = '/calendar-redesign/addEdit.html?' + '&day=' + day + '&hour' + hour;
+  var url = '/calendar-redesign/addEdit.html?' + '&day=' + day + '&hour=' + hour;
   window.location.href = url;
 });
 
