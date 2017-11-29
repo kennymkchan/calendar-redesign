@@ -122,17 +122,10 @@ prepopulate();
 
 if (action === 'addEvent') {
   $('.addEdit-header').html("Add Event");
-  $('.field-date').val("November 3, 2017");
-  $('.field-length').val("45min");
-  $('.field-start-time').val("7:15 am");
 }
 
 if (action === 'editEvent') {
   $('.addEdit-header').html("Edit Event");
-  $('.field-title').val("Catching up with bae");
-  $('.field-date').val("November 3, 2017");
-  $('.field-length').val("180 minutes (3 hours)");
-  $('.field-start-time').val("8:45 am");
 }
 
 $(".current-date").html("Today");
