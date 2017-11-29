@@ -188,6 +188,58 @@ for (var day = 1; day < 8; day++) {
   }
 }
 
+function mockAppointment() {
+  var calendarEvent = document.createElement("div");
+  $(calendarEvent).attr("class", "calendar-event timeblock--60 timeblock-1");
+  $(calendarEvent).append("<p>Soccer Practice</p>");
+  $(calendarEvent).append("<span>7:00am - 8:30am</span>");
+  $(".calendar--day-4").append(calendarEvent);
+
+  var calendarEvent = document.createElement("div");
+  $(calendarEvent).attr("class", "calendar-event timeblock--120 timeblock-2");
+  $(calendarEvent).append("<p>Catching up with bae</p>");
+  $(calendarEvent).append("<span>10:45am - 1:45pm</span>")
+  $(".calendar--day-5").append(calendarEvent);
+
+  var calendarEvent = document.createElement("div");
+  $(calendarEvent).attr("class", "calendar-event timeblock--60 timeblock-4");
+  $(calendarEvent).append("<p>Breakfast with Professor</p>");
+  $(calendarEvent).append("<span>8:15am - 9:45am</span>");
+  $(".calendar--day-7").append(calendarEvent);
+
+  var calendarEvent = document.createElement("div");
+  $(calendarEvent).attr("class", "calendar-event timeblock--120 timeblock-5");
+  $(calendarEvent).append("<p>Interview with Google</p>");
+  $(calendarEvent).append("<span>7:00am - 10:00am</span>");
+  $(".calendar--day-1").append(calendarEvent);
+
+  // Other demo events
+  // var calendarEvent = document.createElement("div");
+  // $(calendarEvent).attr("class", "calendar-event timeblock--60 timeblock-prof-1");
+  // $(calendarEvent).append("<p>Unavailble</p>");
+  // $(calendarEvent).append("<span>10:30 - 12:00 pm</span>");
+  // $(".calendar--day-3").append(calendarEvent);
+  // $(calendarEvent).hide();
+  //
+  // var calendarEvent = document.createElement("div");
+  // $(calendarEvent).attr("class", "calendar-event timeblock--60 timeblock-prof-2");
+  // $(calendarEvent).append("<p>Breakfast Party with department</p>");
+  // $(calendarEvent).append("<span>7:20 - 8:50 am</span>");
+  // $(".calendar--day-1").append(calendarEvent);
+  // $(calendarEvent).hide();
+  //
+  // var calendarEvent = document.createElement("div");
+  // $(calendarEvent).attr("class", "calendar-event timeblock--60 timeblock-prof-3");
+  // $(calendarEvent).append("<p>Pick up textbooks</p>");
+  // $(calendarEvent).append("<span>9:40 - 11:10 am</span>");
+  // $(".calendar--day-6").append(calendarEvent);
+  // $(calendarEvent).hide();
+}
+
+function removeTimeblock() {
+  $(".calendar-event").remove()
+}
+
 var calendarEvent = document.createElement("div");
 $(calendarEvent).attr("class", "calendar-event timeblock--60 timeblock-1");
 $(calendarEvent).append("<p>Soccer Practice</p>");
@@ -263,6 +315,57 @@ $('.calendar-cell').click(function(event) {
 $('.calendar-event').click(function() {
   var url = '/calendar-redesign/addEdit.html?' + '&date=known&action=editEvent&title=breakfast';
   window.location.href = url;
+});
+
+var counter = 0;
+
+$('.right-arrow').click(function() {
+
+  if (counter == 0) {
+    removeTimeblock();
+    var monday = $('.monday').html("Mon 12/4");
+    var tuesday = $('.tuesday').html("Tue 12/5");
+    var wednesday = $('.wednesday').html("Wed 12/6");
+    var thursday = $('.thursday').html("Thu 12/7");
+    var friday = $('.friday').html("Fri 12/8");
+    var saturday = $('.saturday').html("Sat 12/9");
+    var sunday = $('.sunday').html("Sun 12/10");
+  } else {
+    mockAppointment();
+    var monday = $('.monday').html("Mon 11/27");
+    var tuesday = $('.tuesday').html("Tue 11/28");
+    var wednesday = $('.wednesday').html("Wed 11/29");
+    var thursday = $('.thursday').html("Thu 11/30");
+    var friday = $('.friday').html("Fri 12/1");
+    var saturday = $('.saturday').html("Sat 12/2");
+    var sunday = $('.sunday').html("Sun 12/3");
+  }
+
+  counter = counter + 1;
+});
+
+$('.left-arrow').click(function() {
+
+  if (counter == 0) {
+    removeTimeblock();
+    var monday = $('.monday').html("Mon 11/20");
+    var tuesday = $('.tuesday').html("Tue 11/21");
+    var wednesday = $('.wednesday').html("Wed 11/22");
+    var thursday = $('.thursday').html("Thu 11/23");
+    var friday = $('.friday').html("Fri 11/24");
+    var saturday = $('.saturday').html("Sat 11/25");
+    var sunday = $('.sunday').html("Sun 11/26");
+  } else {
+    mockAppointment();
+    var monday = $('.monday').html("Mon 11/27");
+    var tuesday = $('.tuesday').html("Tue 11/28");
+    var wednesday = $('.wednesday').html("Wed 11/29");
+    var thursday = $('.thursday').html("Thu 11/30");
+    var friday = $('.friday').html("Fri 12/1");
+    var saturday = $('.saturday').html("Sat 12/2");
+    var sunday = $('.sunday').html("Sun 12/3");
+  }
+  counter = counter - 1;
 });
 
 function filterResults() {
